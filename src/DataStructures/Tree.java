@@ -3,27 +3,58 @@ package DataStructures;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tree {
+public class Tree<T extends Comparable<?>> {
+
     private Node root;
-    
-    public Tree(String data) {
-        root = new Node();
-        root.data = data;
-        root.children = new ArrayList<>();
+    private int height;
+
+    public Tree(T data) {
+        root = new Node(data);
+        height = 1;
     }
-    
-    private class Node {
-        private String data;
-        private Node parent;
+
+    public class Node<T extends Comparable<?>> {
+        private T data;
+        private Node<T> parent;
         private List<Node> children;
+
+        public Node(T data) {
+            this(data, null);
+        }
+
+        public Node(T data, Node parent) {
+            this.data = data;
+            this.parent = parent;
+            children = new ArrayList<>();
+        }
+
+        public Node addChild(T data) {
+            return addChild(new Node(data, this));
+        }
+
+        public Node addChild(Node<T> child) {
+            children.add(child);
+
+            return this;
+        }
     }
-    
-    /**
-     * Returns the root node of the tree.
-     * 
-     * @return the root node.
-     */
+
     public Node getRoot() {
         return root;
+    }
+
+    public Tree addTree(Tree<T> subTree) {
+        root.addChild(subTree.getRoot());
+        height += subTree.getHeight();
+        return this;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    @Override
+    public String toString() {
+        return "";
     }
 }

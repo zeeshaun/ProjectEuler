@@ -5,6 +5,7 @@
 package GUI;
 
 import Solutions.Problem17;
+import Solutions.Problem18;
 
 /**
  *
@@ -73,6 +74,16 @@ public class Main extends javax.swing.JFrame {
             try {
                 System.out.println("Calculating..");
                 Problem17 prob = new Problem17();
+            } finally {
+                endTime = System.nanoTime();
+            }
+            System.out.println((endTime - startTime)/1000000);
+        } else if (problemCmbo.getSelectedItem().equals("Problem 18")){
+            long startTime = System.nanoTime();
+            long endTime;
+            try {
+                System.out.println("Calculating..");
+                Problem18 prob = new Problem18();
             } finally {
                 endTime = System.nanoTime();
             }

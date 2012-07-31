@@ -61,7 +61,7 @@ public class Problem17 {
     }
 
     //Executes in 7 miliseconds
-    public void calculateBruteSolution() {
+    private void calculateBruteSolution() {
         StringBuilder builder = new StringBuilder();
         for (int x = 1; x <= range; x++) {
             if(x<100){
@@ -108,7 +108,7 @@ public class Problem17 {
         return builder.toString();
     }
 
-    public void initNumbers() {
+    private void initNumbers() {
         numbers[1] = one;
         numbers[2] = two;
         numbers[3] = three;
