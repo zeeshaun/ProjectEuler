@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import Solutions.Problem17;
+
 /**
  *
  * @author zmasood
@@ -26,38 +28,60 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox1 = new javax.swing.JComboBox();
-        jButton1 = new javax.swing.JButton();
+        problemCmbo = new javax.swing.JComboBox();
+        slnBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        problemCmbo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Problem 1", "Problem 2", "Problem 3", "Problem 4", "Problem 5", "Problem 6", "Problem 7", "Problem 8", "Problem 9", "Problem 10", "Problem 11", "Problem 12", "Problem 13", "Problem 14", "Problem 15", "Problem 16", "Problem 17", "Problem 18", " ", " ", " " }));
 
-        jButton1.setText("jButton1");
+        slnBtn.setText("Solve");
+        slnBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                slnBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(248, Short.MAX_VALUE))
+            .addComponent(slnBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(problemCmbo, javax.swing.GroupLayout.Alignment.TRAILING, 0, 145, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(problemCmbo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap(199, Short.MAX_VALUE))
+                .addComponent(slnBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        pack();
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds((screenSize.width-161)/2, (screenSize.height-109)/2, 161, 109);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void slnBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_slnBtnActionPerformed
+        /**
+         * * Temp **
+         */
+        if (problemCmbo.getSelectedItem().equals("Problem 17")) {
+            long startTime = System.nanoTime();
+            long endTime;
+            try {
+                System.out.println("Calculating..");
+                Problem17 prob = new Problem17();
+            } finally {
+                endTime = System.nanoTime();
+            }
+            System.out.println((endTime - startTime)/1000000);
+        }
+        /**
+         * * Temp **
+         */
+    }//GEN-LAST:event_slnBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -94,7 +118,7 @@ public class Main extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox problemCmbo;
+    private javax.swing.JButton slnBtn;
     // End of variables declaration//GEN-END:variables
 }

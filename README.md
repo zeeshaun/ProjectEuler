@@ -1,2 +1,2 @@
-ProjectEuler
+ProjectEuler - http://projecteuler.net
 ============
